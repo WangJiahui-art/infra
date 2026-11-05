@@ -4,6 +4,11 @@
 |:---:|:---:|
 |Add|7|
 |GEMM|2|
+|softMax|1|
 
+
+## Softmax算子验证
+### Softmax朴素版本
+![alt text](images/Softmax_base.png.png)
 
 每个版本对前一版本的瓶颈进行优化.
