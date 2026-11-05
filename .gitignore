@@ -22,3 +22,6 @@ __pycache__/
 *.pyc
 venv/
 .env
+
+# 忽略prac
+prac/
