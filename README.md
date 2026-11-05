@@ -9,6 +9,6 @@
 
 ## Softmax算子验证
 ### Softmax朴素版本
-![alt text](images/Softmax_base.png.png)
+![Softmax朴素版本](images/Softmax_base.png)
 
 每个版本对前一版本的瓶颈进行优化.
