@@ -8,7 +8,7 @@ __global__ void Softmax(float *input, float *output, int M, int N)
      * 实现矩阵按行Softmax激活.
      *
      * @param input : 源矩阵
-     * @param output : 目标
+     * @param output : 目标矩阵
      * @param M : 源矩阵的行数
      * @param N : 源矩阵的列数
      *
