@@ -91,15 +91,22 @@ int main()
     cudaMemcpy(d_input, input, size, cudaMemcpyHostToDevice);
 
     // 传参 调用 //! 调用的时候要分配共享内存
-    Softmax<<<256, 16, 256 * sizeof(float)>>>(d_input, d_output, M, N);
+    Softmax<<<M, 256, 256 * sizeof(float)>>>(d_input, d_output, M, N);
 
     // d_output -> output
     cudaMemcpy(output, d_output, size, cudaMemcpyDeviceToHost);
 
     for (int i = 0; i < N; i++)
     {
-        printf("%f ", output[0 * N + M]);
+        printf("%f ", output[30 * N + i]);
     }
     printf("\n");
+
+    /* 内存释放 */
+    free(input);
+    free(output);
+    cudaFree(d_input);
+    cudaFree(d_output);
+
     return 0;
 }
