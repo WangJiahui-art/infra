@@ -1,31 +1,9 @@
-# 基础算子(Reduce, GEMM, SoftMax)
-当前实现了
+# 算子
+- 包含算子: **add**, **GEMM**, **softmax**, **online softmax**, **attention**
+部分完成, 还在coding......
 |算子|版本数|
 |:---:|:---:|
 |Add|7|
 |GEMM|2|
-|softMax|1|
-
-
-## Softmax算子
-### Softmax朴素版本
-![Softmax朴素版本](images/Softmax_base.png)
-
-#### 执行流程
-朴素版本通过单线程完成以下流程:
-1. 行扫描, 获取最大值
-2. 行扫描, 获取Softmax的分母
-3. 行扫描, 获取每一个位置的激活值.
-#### 瓶颈分析:
-|瓶颈|原因|
-|:---|:---|
-|单线程串行|每次都要读取共享内存, 耗时久|
-|memory bound|每读取一个数, 只进行一次浮点数计算| 
-
-### Softmax V1
-通过**跨步循环+Reduce** 让一个BLOCK处理矩阵的一行.实现提速 
-
-
-
-
-每个版本对前一版本的瓶颈进行优化.
+|softmax|2|
+|online softmax|1|
