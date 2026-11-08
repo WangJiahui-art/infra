@@ -75,7 +75,7 @@ int main()
     cudaMemcpy(d_input, input, size, cudaMemcpyHostToDevice);
 
     // 传参 调用
-    Softmax<<<256, 16>>>(d_input, d_output, M, N);
+    Softmax<<<4096, 256>>>(d_input, d_output, M, N);
 
     // d_output -> output
     cudaMemcpy(output, d_output, size, cudaMemcpyDeviceToHost);
