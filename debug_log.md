@@ -7,4 +7,9 @@
 - 没有任何报错信息
 详细:
 由于gridDim和blockDim传反,导致内核启动以后共享内存分配的太少了, 导致了launch失败, 但是launch失败的信息被吞掉了, 看不到.
-
+### #include <torch/extension.h> 头文件解析失败
+运行
+```bash
+uv run python -c "from torch.utils.cpp_extension import include_paths; print('\n'.join(include_paths()))"
+```
+将得到的两个路径复制到.vscode/c_cpp_properties.json里面即可.
