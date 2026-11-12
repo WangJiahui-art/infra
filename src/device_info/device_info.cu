@@ -1,3 +1,7 @@
+/*
+    Query the detailed information of the CUDA device.
+*/
+
 #include <cuda_runtime.h>
 #include <cstdio>
 
@@ -39,29 +43,3 @@ int main()
     }
     return 0;
 }
-
-/*
-========== Device 0: NVIDIA GeForce RTX 2060 ==========
-* CUDA Capability Major/Minor: 7.5
-* Total Global Memory: 6144 MB
-* Shared Memory per Block: 49152 bytes
-* Shared Memory per Multiprocessor: 65536 bytes
-* Registers per Block: 65536
-* Registers per Multiprocessor: 65536
-* Max Threads per Block: 1024
-* Max Threads per Multiprocessor: 1024
-* Warp Size: 32
-* Max Blocks per Multiprocessor: 16
-* Clock Rate: 1350 MHz
-* Memory Clock Rate: 5501 MHz
-* Memory Bus Width: 192 bits
-* L2 Cache Size: 3145728 bytes
-* Multiprocessor Count: 30
-* Concurrent Kernels: 1
-* ECC Enabled: 0
-* Unified Addressing: 1
-* Managed Memory: 1
-* Compute Mode: 0
-* PCI Bus ID: 1, Device ID: 0
-* Kernel Exec Timeout Enabled: 1
-*/
